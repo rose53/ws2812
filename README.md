@@ -3,9 +3,9 @@
 Example to demonstrate the usage of the [RPi-WS2812-HAT](http://www.watterott.com/en/RPi-WS2812-HAT)
 in Java. The communication is done via I2C using [Pi4J](http://pi4j.com/).
 
-
+![Animation](/images/ws2812.gif)
 <video autoplay loop>
-  <source src="images/ws2812.mp4" type="video/mp4">
+  <source src="/images/ws2812.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
