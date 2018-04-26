@@ -101,8 +101,8 @@ public class Conway {
     private boolean hasGenerationChanged(Color[][] newGeneration) {
         for(int row = 0; row < cells.length; row++ ) {
             for(int col = 0; col < cells[row].length; col++ ) {
-                if (    (DEAD.equals(cells[row][col]) && DEAD.equals(newGeneration[row][col]))
-                     || (!DEAD.equals(cells[row][col]) && !DEAD.equals(newGeneration[row][col]))) {
+                if (    !((DEAD.equals(cells[row][col]) && DEAD.equals(newGeneration[row][col]))
+                     || (!DEAD.equals(cells[row][col]) && !DEAD.equals(newGeneration[row][col])))) {
                     return true;
                 }
             }
