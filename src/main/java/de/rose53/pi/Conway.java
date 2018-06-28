@@ -9,12 +9,14 @@ import de.rose53.pi.WS2812B.LEDField;
 
 public class Conway {
 
-    private final int COLS = WS2812B.COLS;
-    private final int ROWS = WS2812B.ROWS;
+    private static final int COLS = WS2812B.COLS;
+    private static final int ROWS = WS2812B.ROWS;
 
-    private final Color DEAD = Color.BLACK;
+    private static final Color DEAD = Color.BLACK;
 
-    private final int MAX_CYCLES = 100;
+    private final static float BRIGHTNESS = 0.02f;
+
+    private final static int MAX_CYCLES = 200;
 
     private Color[][] cells = new Color[ROWS][COLS];
 
@@ -31,9 +33,9 @@ public class Conway {
                 if (random.nextFloat() < 0.4) {
 
                     final float hue        = random.nextFloat();
-                    // Saturation between 0.3 and 0.5
-                    final float saturation = (random.nextInt(2000) + 3000) / 10000f;
-                    cells[row][col] = Color.getHSBColor(hue, saturation, 0.4f);
+                    // Saturation between 0.5 and 0.8
+                    final float saturation = 0.9f;
+                    cells[row][col] = Color.getHSBColor(hue, saturation,BRIGHTNESS);
                 } else {
                     cells[row][col] = DEAD;
                 }
@@ -132,7 +134,7 @@ public class Conway {
                 saturation += hsbValues[1];
             }
         }
-        return Color.getHSBColor(hue/count, saturation/count, 0.4f);
+        return Color.getHSBColor(hue/count, 0.9f, BRIGHTNESS);
     }
 
     /**
